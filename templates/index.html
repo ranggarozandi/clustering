@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Segmentation Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Customer Segmentation Prediction</h1>
+        <form action="/predict" method="post">
+            <label for="cust_id">Customer ID:</label>
+            <input type="text" id="cust_id" name="cust_id" required>
+
+            <label for="balance">Balance:</label>
+            <input type="number" id="balance" name="balance" step="0.01" required>
+
+            <label for="purchases">Purchases:</label>
+            <input type="number" id="purchases" name="purchases" step="0.01" required>
+
+            <button type="submit">Submit</button>
+        </form>
+        {% if result %}
+        <div id="result">{{ result }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
