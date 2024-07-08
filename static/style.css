@@ -67,8 +67,14 @@ button:hover {
     margin-top: 20px;
 }
 
-#result input {
-    border: none;
+.result-box {
+    padding: 10px;
     font-weight: bold;
-    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f4f4f4;
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
+    word-wrap: break-word;
 }
