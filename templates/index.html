@@ -3,26 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Segmentation Prediction</title>
+    <title>Cek Cluster Customer</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Customer Segmentation Prediction</h1>
+        <h1>Cek Cluster Customer</h1>
         <form action="/predict" method="post">
-            <label for="cust_id">Customer ID:</label>
-            <input type="text" id="cust_id" name="cust_id" required>
-
-            <label for="balance">Balance:</label>
-            <input type="number" id="balance" name="balance" step="0.01" required>
-
-            <label for="purchases">Purchases:</label>
-            <input type="number" id="purchases" name="purchases" step="0.01" required>
-
-            <button type="submit">Submit</button>
+            <div class="form-group">
+                <label for="cust_id">CustomerID</label>
+                <input type="text" id="cust_id" name="cust_id" required>
+            </div>
+            <div class="form-group">
+                <label for="balance">Balance</label>
+                <input type="number" id="balance" name="balance" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="purchases">Purchase</label>
+                <input type="number" id="purchases" name="purchases" step="0.01" required>
+            </div>
+            <button type="submit">Cek</button>
         </form>
         {% if result %}
-        <div id="result">{{ result }}</div>
+        <div id="result">
+            <label>Hasil</label>
+            <input type="text" value="{{ result }}" readonly>
+        </div>
         {% endif %}
     </div>
 </body>
